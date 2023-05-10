@@ -1,97 +1,98 @@
 <!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Dangelo Martins">
-    <meta name="generator" content="Hugo 0.84.0">
+<html lang="PT-br" class="h-100">
 
-    <title>Dangelo Martins</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Dangelo Martins">
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/index.css" rel="stylesheet">
+  <title>Dangelo Martins</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
+  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none; 
-        -moz-user-select: none;
-        user-select: none;
-      }
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
+</head>
 
-  </head>
-  <body class="d-flex h-100 text-center text-white bg-dark">
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0"><img src = "img/rosto.svg" alt="Dangelo" width="80" height="80"/></h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link" aria-current="page" href="blog.html">Artigos</a>
-        <a class="nav-link" href="#">Galeria de fotos</a>
-      </nav>
-    </div>
-  </header>
+<body class="d-flex h-100 text-center text-white bg-dark">
 
-  <main class="px-3">
-   
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
 
-    <figure class="figure">
-      <img src="img/tomate.png" class="figure-img img-fluid rounded" alt="...">
-      <figcaption class="figure-caption">Colheita de tomates cerejas na minha horta.</figcaption>
-    </figure>
-  </main>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link" aria-current="page" href="blog.html">Artigos</a>
+          <a class="nav-link" href="#">Galeria de fotos</a>
+          <h3 class="float-md-start mb-0"><img src="img/rosto.svg" alt="Dangelo" width="80" height="80" /></h3>
+          
+        </nav>
+      </div>
+
+      <div class="nav2">
+
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <a class="nav-link" aria-current="page" href="blog.html">Enviar uma mensagem no meu celular</a>
+          <a class="nav-link" href="#">Agendar Reunião</a>
+          <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="85" height="85" /></h3>
+          
+        </nav>
+      </div>
+    </header>
+<!--fotinha 
+    <main class="px-3">
+      <figure class="figure">
+        <img src="img/tomate.png" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption">Tomates cerejas na minha horta.</figcaption>
+      </figure>
+    </main>
+  -->
+    <footer class="mt-auto text-white-50">
+      <p>Agende uma <a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">reunião</a>
+        comigo, ou envie uma <a href="https://twitter.com/mdo" class="text-white">mensagem</a> no meu telefone.<img
+          src="img/rosto2.svg" alt="Dangelo" width="80" height="80" /></p>
+    </footer>
+  </div>
 
 
+
+</body>
 
 <!--Modal agenda-->
-
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+<!-- Modal -->
+<div class="modal frame" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content rounded-0">
+      <div class="modal-header bg-info">
+        <h5 class="modal-title" id="exampleModalLabel">Agendar reunião.</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+
     </div>
   </div>
 </div>
 
 <script>
   var myModal = new bootstrap.Modal(document.getElementById("#exampleModal"), {});
-    document.onreadystatechange = function () {
+  document.onreadystatechange = function () {
     myModal.show();
-};
+  };
 </script>
 
 <script src="js/bootstrap.bundle.min.js"></script>
-   
 
-  <footer class="mt-auto text-white-50">
-    <p>Agende uma <a href="#"  data-bs-toggle="modal" data-bs-target="#exampleModal">Load me</a> comigo, ou uma <a href="https://twitter.com/mdo" class="text-white">mensagem</a> no meu telefone.<img src = "img/rosto2.svg" alt="Dangelo" width="80" height="80"/></p>
-  </footer>
-</div>
- 
-  </body>
 </html>
