@@ -23,13 +23,13 @@
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
-      <div>
+      <div class="nav1">
 
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link" aria-current="page" href="blog.html">Artigos</a>
           <a class="nav-link" href="#">Galeria de fotos</a>
-          <h3 class="float-md-start mb-0"><img src="img/rosto.svg" alt="Dangelo" width="80" height="80" /></h3>
-          
+          <h2 class="float-md-start mb-0"><img src="img/rosto.svg" alt="Dangelo" width="125" height="125" /></h2>
+
         </nav>
       </div>
 
@@ -37,38 +37,29 @@
 
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link" aria-current="page" href="blog.html">Enviar uma mensagem no meu celular</a>
-          <a class="nav-link" href="#">Agendar Reunião</a>
-          <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="85" height="85" /></h3>
-          
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reuniao">Agendar Reunião</a>
+          <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="135" height="135" /></h3>
+
         </nav>
       </div>
     </header>
-<!--fotinha 
-    <main class="px-3">
+
+    <div class="foto">
       <figure class="figure">
-        <img src="img/tomate.png" class="figure-img img-fluid rounded" alt="...">
-        <figcaption class="figure-caption">Tomates cerejas na minha horta.</figcaption>
+        <img src="img/tomates.svg" class="figure-img img-fluid rounded" alt="...">
+
       </figure>
-    </main>
-  -->
-    <footer class="mt-auto text-white-50">
-      <p>Agende uma <a href="#" class="text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">reunião</a>
-        comigo, ou envie uma <a href="https://twitter.com/mdo" class="text-white">mensagem</a> no meu telefone.<img
-          src="img/rosto2.svg" alt="Dangelo" width="80" height="80" /></p>
-    </footer>
-  </div>
-
-
+    </div>
 
 </body>
 
-<!--Modal agenda-->
 <!-- Modal -->
-<div class="modal frame" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen">
-    <div class="modal-content rounded-0">
-      <div class="modal-header bg-info">
-        <h5 class="modal-title" id="exampleModalLabel">Agendar reunião.</h5>
+
+<div class="modal fade" id="reuniao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title" id="staticBackdropLabel">Agendar reunião</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -81,17 +72,14 @@
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
       </div>
-
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn bg-success text-white">Enviar</button>
+      </div>
     </div>
   </div>
 </div>
 
-<script>
-  var myModal = new bootstrap.Modal(document.getElementById("#exampleModal"), {});
-  document.onreadystatechange = function () {
-    myModal.show();
-  };
-</script>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
