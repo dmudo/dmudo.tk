@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="PT-br" class="h-100">
+<html lang="PT-br">
 
 <head>
   <meta charset="utf-8">
@@ -42,17 +42,12 @@
 
         </nav>
       </div>
-    
-      <br>
-      <br>
-      <br>
-
-      <div class="nav3">
-         <img src="img/tomates.svg" class="figure-img img-fluid rounded" alt="Tomate cereja">
+      <div class="center">
+        <iframe class="center" width="600" height="600" src="https://player.vimeo.com/video/827090230?background=1"
+          frameborder="0" allowfullscreen></iframe>
       </div>
-  </div>
 
-  </header>
+    </header>
 
 </body>
 
@@ -60,13 +55,13 @@
 
 <div class="modal fade" id="reuniao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog bg-dark">
     <div class="modal-content">
-      <div class="modal-header bg-dark">
+      <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">Agendar reunião</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="color: rgb(0, 0, 0);">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Email address</label>
           <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
@@ -76,6 +71,31 @@
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
       </div>
+
+      <fieldset class="row mb-3">
+        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <div class="col-sm-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+            <label class="form-check-label" for="gridRadios1">
+              First radio
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+            <label class="form-check-label" for="gridRadios2">
+              Second radio
+            </label>
+          </div>
+          <div class="form-check disabled">
+            <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
+            <label class="form-check-label" for="gridRadios3">
+              Third disabled radio
+            </label>
+          </div>
+        </div>
+      </fieldset>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="modal">Fechar</button>
         <button type="button" class="btn btn bg-success text-white">Enviar</button>
@@ -83,7 +103,6 @@
     </div>
   </div>
 </div>
-
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
