@@ -34,7 +34,7 @@
 
       <div class="nav2">
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link" aria-current="page" href="blog.html">Enviar uma mensagem no meu celular</a>
+          <a class="nav-link" aria-current="page" href="">Enviar uma mensagem no meu celular</a>
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reuniao">Agendar Reunião</a>
           <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="135" height="135" /></h3>
         </nav>
@@ -62,18 +62,19 @@
       </div>
 
       <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
-
+        <!--Fomulario de Reunião-->
+        <form method="POST" action="processa.php">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Nome</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="">
+          <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
         </div>
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+          <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
         </div>
         <div class="mb-3">
           <label class="form-label" for="phone">Telefone</label>
-          <input type="text" name="telefone" id="phone" class="form-control" placeholder="" maxlength="33" />
+          <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
         </div>
 
         <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
@@ -101,12 +102,13 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary bg-danger" data-bs-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn bg-success text-white">Enviar</button>
+        <button type="submit" value="enviar" class="btn btn bg-success text-white">Enviar</button>
+       
       </div>
     </div>
   </div>
 </div>
+</form>
 
 <!--Scrip para chamada via Iframe no Moldal Colaborador-->
 <script>
