@@ -19,6 +19,37 @@
 
 </head>
 
+<?php 
+    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+
+    if(!empty($dados['enviareuni'])){
+      require 'lib/vendor/autoload.php';
+      $email = new \SendGrid\Mail\Mail();
+
+      $email->setFrom("dangelomartins@gmail.com", "Dangelo");
+      $email->setSubject("Agendamento de reunião");
+      $email->addTo("dangelomartins@gmail.com", "Example User");
+      $email->addContent("text/plain", "Cobtudo somente texto");
+      $email->addContent(
+          "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
+      );
+              $sendgrid = new \SendGrid(getenv('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'));
+      try {
+          $response = $sendgrid->send($email);
+          echo "Mensagem enviada com sucesso!<br>";
+      } catch (Exception $e) {
+          echo 'Caught exception: '. $e->getMessage() ."\n";
+          echo "Mensagem não enviada!<br>";
+      }
+      echo  "Erro Mensagem não enviada!<br>";
+    }else {
+      echo  "Erro Mensagem não enviada!<br>";
+    }
+    
+
+?>
+
+
 <body class="d-flex h-100 text-center text-white bg-dark">
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -63,7 +94,7 @@
 
       <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
         <!--Fomulario de Reunião-->
-        <form method="POST" action="processa.php">
+        <form method="POST" action="">
         <div class="mb-3">
           <label for="exampleFormControlInput1" class="form-label">Nome</label>
           <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
@@ -82,13 +113,13 @@
 
           <div class="col-sm-10">
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+              <input class="form-check-input" type="radio" name="radio1" id="gridRadios1" value="audio" checked>
               <label class="form-check-label" for="gridRadios1">
                 Áudio conferência
               </label>
             </div>
             <div class="form-check" style="color: rgb(0, 0, 0);">
-              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+              <input class="form-check-input" type="radio" name="radio2" id="gridRadios2" value="video">
               <label class="form-check-label" for="gridRadios2">
                 Video conferência.
               </label>
@@ -102,7 +133,8 @@
       </div>
 
       <div class="modal-footer">
-        <button type="submit" value="enviar" class="btn btn bg-success text-white">Enviar</button>
+        <button type="submit" value="enviar" name="enviareuni" class="btn btn bg-success text-white">Enviar</button>
+        
        
       </div>
     </div>
