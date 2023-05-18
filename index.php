@@ -28,7 +28,7 @@
 
       $email->setFrom("dangelomartins@gmail.com", "Dangelo");
       $email->setSubject("Agendamento de reunião");
-      $email->addTo("dangelomartins@gmail.com", "Example User");
+      $email->addTo("dangelomartinass@gmail.com", "Example User");
       $email->addContent("text/plain", "Cobtudo somente texto");
       $email->addContent(
           "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
@@ -42,11 +42,7 @@
           echo "Mensagem não enviada!<br>";
       }
       echo  "Erro Mensagem não enviada!<br>";
-    }else {
-      echo  "Erro Mensagem não enviada!<br>";
     }
-    
-
 ?>
 
 
@@ -134,8 +130,7 @@
 
       <div class="modal-footer">
         <button type="submit" value="enviar" name="enviareuni" class="btn btn bg-success text-white">Enviar</button>
-        
-       
+            
       </div>
     </div>
   </div>
