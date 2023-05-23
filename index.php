@@ -33,7 +33,7 @@
       $email->addContent(
           "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
       );
-              $sendgrid = new \SendGrid(getenv('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'));
+              $sendgrid = new \SendGrid(getenv('###'));
       try {
           $response = $sendgrid->send($email);
           echo "Mensagem enviada com sucesso!<br>";
