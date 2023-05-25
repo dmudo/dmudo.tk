@@ -61,7 +61,7 @@
 
       <div class="nav2">
         <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link" aria-current="page" href="">Enviar uma mensagem no meu celular</a>
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#msgsms">Enviar uma mensagem no meu celular</a>
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reuniao">Agendar Reunião</a>
           <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="135" height="135" /></h3>
         </nav>
@@ -209,6 +209,83 @@
   inputElement.addEventListener('keydown', enforceFormat);
   inputElement.addEventListener('keyup', formatToPhone);
 </script>
+
+<!-- Modal Mensagem de celular-->
+
+<div class="modal fade" id="msgsms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog bg-dark">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color: rgb(0, 0, 0);" id="staticBackdropLabel">Agendar reunião</h5>
+        <button type="button" class="btn-close m-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
+        <!--Fomulario de Reunião-->
+        <form method="POST" action="">
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Nome</label>
+          <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+          <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="phone">Telefone</label>
+          <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
+        </div>
+
+        <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
+          <legend class="col-form-label col-sm-2 pt-0">Como deseja realizar reunião?</legend>
+
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="radio1" id="gridRadios1" value="audio" checked>
+              <label class="form-check-label" for="gridRadios1">
+                Áudio conferência
+              </label>
+            </div>
+            <div class="form-check" style="color: rgb(0, 0, 0);">
+              <input class="form-check-input" type="radio" name="radio2" id="gridRadios2" value="video">
+              <label class="form-check-label" for="gridRadios2">
+                Video conferência.
+              </label>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="modal-footer">
+        <button type="submit" value="enviar" name="enviareuni" class="btn btn bg-success text-white">Enviar</button>
+            
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+<?php
+/*
+//Mensagem do sms FUNCIONANDO
+
+$mensagem = urlencode("teste de requisacao http");
+
+$url_api = "https://api.iagentesms.com.br/webservices/http.php?metodo=envio&usuario=dangelomartins@gmail.com&senha=DMfv@9fbZDUtQH&celular=5162984153899
+&mensagem={$mensagem}&codigosms=102";
+
+// Realizar a requisição http passando os parâmetros informados
+$resposta_api = file_get_contents($url_api);
+// imprimir o resultado da requisição
+echo $resposta_api;
+
+*/
+?>
+
+
+
 
 <script src="js/bootstrap.bundle.min.js"></script>
 
