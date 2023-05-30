@@ -9,7 +9,6 @@
 
   <title>Dangelo Martins</title>
 
-  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/index.css" rel="stylesheet">
@@ -19,30 +18,31 @@
 
 </head>
 
-<?php 
-    $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+<?php
+$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
 
-    if(!empty($dados['enviareuni'])){
-      require 'lib/vendor/autoload.php';
-      $email = new \SendGrid\Mail\Mail();
+if (!empty($dados['enviareuni'])) {
+  require 'lib/vendor/autoload.php';
+  $email = new \SendGrid\Mail\Mail();
 
-      $email->setFrom("dangelomartins@gmail.com", "Dangelo");
-      $email->setSubject("Agendamento de reunião");
-      $email->addTo("dangelomartinass@gmail.com", "Example User");
-      $email->addContent("text/plain", "Cobtudo somente texto");
-      $email->addContent(
-          "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-      );
-              $sendgrid = new \SendGrid(getenv('###'));
-      try {
-          $response = $sendgrid->send($email);
-          echo "Mensagem enviada com sucesso!<br>";
-      } catch (Exception $e) {
-          echo 'Caught exception: '. $e->getMessage() ."\n";
-          echo "Mensagem não enviada!<br>";
-      }
-      echo  "Erro Mensagem não enviada!<br>";
-    }
+  $email->setFrom("dangelomartins@gmail.com", "Dangelo");
+  $email->setSubject("Agendamento de reunião");
+  $email->addTo("dangelomartinass@gmail.com", "Example User");
+  $email->addContent("text/plain", "Cobtudo somente texto");
+  $email->addContent(
+    "text/html",
+    "<strong>and easy to do anywhere, even with PHP</strong>"
+  );
+  $sendgrid = new \SendGrid(getenv('###'));
+  try {
+    $response = $sendgrid->send($email);
+    echo "Mensagem enviada com sucesso!<br>";
+  } catch (Exception $e) {
+    echo 'Caught exception: ' . $e->getMessage() . "\n";
+    echo "Mensagem não enviada!<br>";
+  }
+  echo  "Erro Mensagem não enviada!<br>";
+}
 ?>
 
 
@@ -71,16 +71,14 @@
     <br>
     <br>
     <div class="nav3">
-      <iframe width="600" height="600" src="https://player.vimeo.com/video/827090230?background=1" frameborder="0"
-        allowfullscreen></iframe>
+      <iframe width="600" height="600" src="https://player.vimeo.com/video/827090230?background=1" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </body>
 
 <!-- Modal -->
 
-<div class="modal fade" id="reuniao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="reuniao" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
@@ -91,46 +89,48 @@
       <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
         <!--Fomulario de Reunião-->
         <form method="POST" action="">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nome</label>
-          <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="phone">Telefone</label>
-          <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
-        </div>
-
-        <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
-          <legend class="col-form-label col-sm-2 pt-0">Como deseja realizar reunião?</legend>
-
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio1" id="gridRadios1" value="audio" checked>
-              <label class="form-check-label" for="gridRadios1">
-                Áudio conferência
-              </label>
-            </div>
-            <div class="form-check" style="color: rgb(0, 0, 0);">
-              <input class="form-check-input" type="radio" name="radio2" id="gridRadios2" value="video">
-              <label class="form-check-label" for="gridRadios2">
-                Video conferência.
-              </label>
-            </div>
-
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nome</label>
+            <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
           </div>
-        </fieldset>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
+          </div>
+          <div class="mb-3">
+            <label class="form-label" for="phone">Telefone</label>
+            <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
+          </div>
 
-        <hr>
-        <p><h5>Você recebera um e-mail com a confirmação da reunião agendada.</h5></p>
+          <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
+            <legend class="col-form-label col-sm-2 pt-0">Como deseja realizar reunião?</legend>
+
+            <div class="col-sm-10">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" id="gridRadios1" value="audio" checked>
+                <label class="form-check-label" for="gridRadios1">
+                  Áudio conferência
+                </label>
+              </div>
+              <div class="form-check" style="color: rgb(0, 0, 0);">
+                <input class="form-check-input" type="radio" name="radio2" id="gridRadios2" value="video">
+                <label class="form-check-label" for="gridRadios2">
+                  Video conferência.
+                </label>
+              </div>
+
+            </div>
+          </fieldset>
+
+          <hr>
+          <p>
+          <h5>Você recebera um e-mail com a confirmação da reunião agendada.</h5>
+          </p>
       </div>
 
       <div class="modal-footer">
         <button type="submit" value="enviar" name="enviareuni" class="btn btn bg-success text-white">Enviar</button>
-            
+
       </div>
     </div>
   </div>
@@ -212,63 +212,35 @@
 
 <!-- Modal Mensagem de celular-->
 
-<div class="modal fade" id="msgsms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="msgsms" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog bg-dark">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" style="color: rgb(0, 0, 0);" id="staticBackdropLabel">Agendar reunião</h5>
+        <h5 class="modal-title" style="color: rgb(0, 0, 0);" id="staticBackdropLabel">Enviar uma mensagem</h5>
         <button type="button" class="btn-close m-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
+      <div class="modal-body" style="color: rgb(0, 0, 0); text-align: center;">
         <!--Fomulario de Reunião-->
-        <form method="POST" action="">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Nome</label>
-          <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
+        <div>
+          <span style="font-size: larger;">Telegram</span>
+          <a href="https://t.me/Dmudo" target="_blank"><img src="img/telegram.svg" width="80" height="80"></a>
+          
         </div>
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-          <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
-        </div>
-        <div class="mb-3">
-          <label class="form-label" for="phone">Telefone</label>
-          <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
+        <br>
+        <div>
+          <span style="font-size: larger;">Whatsapp</span>
+          <a href="https://api.whatsapp.com/send?phone=5562984153899&text=Preciso%20falar%20com%20voc%C3%AA." target="_blank"><img src="img/Whatsapp.svg" width="80" height="80"></a>
+                  
         </div>
 
-        <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
-          <legend class="col-form-label col-sm-2 pt-0">Como deseja realizar reunião?</legend>
-
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="radio1" id="gridRadios1" value="audio" checked>
-              <label class="form-check-label" for="gridRadios1">
-                Áudio conferência
-              </label>
-            </div>
-            <div class="form-check" style="color: rgb(0, 0, 0);">
-              <input class="form-check-input" type="radio" name="radio2" id="gridRadios2" value="video">
-              <label class="form-check-label" for="gridRadios2">
-                Video conferência.
-              </label>
-            </div>
-
-          </div>
-        </fieldset>
-      </div>
-
-      <div class="modal-footer">
-        <button type="submit" value="enviar" name="enviareuni" class="btn btn bg-success text-white">Enviar</button>
-            
       </div>
     </div>
   </div>
-</div>
-</form>
 
-<?php
-/*
+
+  <?php
+  /*
 //Mensagem do sms FUNCIONANDO
 
 $mensagem = urlencode("teste de requisacao http");
@@ -282,11 +254,11 @@ $resposta_api = file_get_contents($url_api);
 echo $resposta_api;
 
 */
-?>
+  ?>
 
 
 
 
-<script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 
 </html>
