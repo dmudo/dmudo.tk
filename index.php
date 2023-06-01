@@ -99,11 +99,11 @@ if (!empty($dados['enviareuni'])) {
           </div>
           <div class="mb-3">
             <label class="form-label" for="phone">Telefone</label>
-            <input type="text" name="telefone" class="form-control" placeholder="" maxlength="33" />
+            <input type="text" id="telefone" name="telefone" class="form-control" placeholder="" maxlength="33" />
           </div>
 
           <fieldset class="row mb-3" style="color: rgb(0, 0, 0);">
-            <legend class="col-form-label col-sm-2 pt-0">Como deseja realizar reunião?</legend>
+            <p>Como deseja realizar reunião?</p>
 
             <div class="col-sm-10">
               <div class="form-check">
@@ -157,6 +157,7 @@ if (!empty($dados['enviareuni'])) {
     $(this).find('#cadcolab').trigger('reset');
   })
 </script>
+
 <!-- Colocar parenteses no DD e formatar o numero conforme usuario digita -->
 <script>
   const isNumericInput = (event) => {
@@ -205,7 +206,7 @@ if (!empty($dados['enviareuni'])) {
     }
   };
 
-  const inputElement = document.getElementById('phone');
+  const inputElement = document.getElementById('telefone');
   inputElement.addEventListener('keydown', enforceFormat);
   inputElement.addEventListener('keyup', formatToPhone);
 </script>
