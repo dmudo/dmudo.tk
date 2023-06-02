@@ -65,14 +65,14 @@
 
       <div class="modal-body" style="color: rgb(0, 0, 0); text-align: left;">
         <!--Fomulario de Reunião-->
-        <form method="POST" action="">
+        <form method="POST" action="processa.php">
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nome</label>
-            <input type="email" class="form-control" name="nome" id="exampleFormControlInput1" placeholder="">
+            <input type="nome" class="form-control" name="nome" id="nome" placeholder="">
           </div>
           <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">E-mail</label>
-            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="">
+            <input type="email" class="form-control" name="email" id="email" placeholder="">
           </div>
           <div class="mb-3">
             <label class="form-label" for="phone">Telefone</label>
@@ -214,31 +214,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-  <?php
-  /*
-//Mensagem do sms FUNCIONANDO
-
-$mensagem = urlencode("teste de requisacao http");
-
-$url_api = "https://api.iagentesms.com.br/webservices/http.php?metodo=envio&usuario=dangelomartins@gmail.com&senha=DMfv@9fbZDUtQH&celular=5162984153899
-&mensagem={$mensagem}&codigosms=102";
-
-// Realizar a requisição http passando os parâmetros informados
-$resposta_api = file_get_contents($url_api);
-// imprimir o resultado da requisição
-echo $resposta_api;
-
-*/
-  ?>
-
-
-
 
   <script src="js/bootstrap.bundle.min.js"></script>
 

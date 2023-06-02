@@ -11,26 +11,23 @@
         <?php 
         $nome = $_POST['nome'];
         $email = $_POST['email'];
-        $mensagem = $_POST['mensagem'];
-          
-    
-
-        
+        $telefone = $_POST['telefone'];
+ 
         $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
       
         if (!empty($dados['enviareuni'])) {
           require 'vendor/autoload.php';
           $email = new \SendGrid\Mail\Mail();
       
-          $email->setFrom("dangelomartins@gmail.com", "Dangelo");
+          $email->setFrom("dangelomartinsss@gmail.com", "Dangelo");
           $email->setSubject("Agendamento de reunião");
-          $email->addTo("dangelomartinass@gmail.com", "Example User");
+          $email->addTo("dangelomartins@gmail.com", "Example User");
           $email->addContent("text/plain", "Cobtudo somente texto");
           $email->addContent(
             "text/html",
             "<strong>and easy to do anywhere, even with PHP</strong>"
           );
-          $sendgrid = new \SendGrid(getenv('###'));
+          $sendgrid = new \SendGrid(getenv('#####'));
           try {
             $response = $sendgrid->send($email);
             echo "Mensagem enviada com sucesso!<br>";
