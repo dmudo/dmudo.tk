@@ -18,34 +18,6 @@
 
 </head>
 
-<?php
-$dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
-
-if (!empty($dados['enviareuni'])) {
-  require 'lib/vendor/autoload.php';
-  $email = new \SendGrid\Mail\Mail();
-
-  $email->setFrom("dangelomartins@gmail.com", "Dangelo");
-  $email->setSubject("Agendamento de reunião");
-  $email->addTo("dangelomartinass@gmail.com", "Example User");
-  $email->addContent("text/plain", "Cobtudo somente texto");
-  $email->addContent(
-    "text/html",
-    "<strong>and easy to do anywhere, even with PHP</strong>"
-  );
-  $sendgrid = new \SendGrid(getenv('###'));
-  try {
-    $response = $sendgrid->send($email);
-    echo "Mensagem enviada com sucesso!<br>";
-  } catch (Exception $e) {
-    echo 'Caught exception: ' . $e->getMessage() . "\n";
-    echo "Mensagem não enviada!<br>";
-  }
-  echo  "Erro Mensagem não enviada!<br>";
-}
-?>
-
-
 <body class="d-flex h-100 text-center text-white bg-dark">
 
   <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -74,6 +46,11 @@ if (!empty($dados['enviareuni'])) {
       <iframe width="600" height="600" src="https://player.vimeo.com/video/827090230?background=1" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
+
+  <div class="nav4">
+
+  </div>
+
 </body>
 
 <!-- Modal -->
@@ -226,18 +203,21 @@ if (!empty($dados['enviareuni'])) {
         <div>
           <span style="font-size: larger;">Telegram</span>
           <a href="https://t.me/Dmudo" target="_blank"><img src="img/telegram.svg" width="80" height="80"></a>
-          
+
         </div>
         <br>
         <div>
           <span style="font-size: larger;">Whatsapp</span>
           <a href="https://api.whatsapp.com/send?phone=5562984153899&text=Preciso%20falar%20com%20voc%C3%AA." target="_blank"><img src="img/Whatsapp.svg" width="80" height="80"></a>
-                  
-        </div>
 
+        </div>
       </div>
     </div>
   </div>
+
+
+
+
 
 
   <?php

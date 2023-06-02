@@ -12,30 +12,38 @@
         $nome = $_POST['nome'];
         $email = $_POST['email'];
         $mensagem = $_POST['mensagem'];
-        
-        
-        require 'lib/vendor/autoload.php';
+          
+    
 
-        $email = new Sendgrid\Mail\Mail(null, "dangelomartins@gmail.com");
-        $email->setFrom("test@example.com", "Example User");
-        $email->setSubject("Sending with Twilio SendGrid is Fun");
-        $email->addTo("test@example.com", "Example User");
-        $email->addContent("text/plain", "and easy to do anywhere, even with PHP");
-        $email->addContent(
-            "text/html", "<strong>and easy to do anywhere, even with PHP</strong>"
-        );
-                $sendgrid = new \SendGrid(getenv('##'));
-        try {
+        
+        $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT);
+      
+        if (!empty($dados['enviareuni'])) {
+          require 'vendor/autoload.php';
+          $email = new \SendGrid\Mail\Mail();
+      
+          $email->setFrom("dangelomartins@gmail.com", "Dangelo");
+          $email->setSubject("Agendamento de reunião");
+          $email->addTo("dangelomartinass@gmail.com", "Example User");
+          $email->addContent("text/plain", "Cobtudo somente texto");
+          $email->addContent(
+            "text/html",
+            "<strong>and easy to do anywhere, even with PHP</strong>"
+          );
+          $sendgrid = new \SendGrid(getenv('###'));
+          try {
             $response = $sendgrid->send($email);
-            print $response->statusCode() . "\n";
-            print_r($response->headers());
-            print $response->body() . "\n";
-        } catch (Exception $e) {
-            echo 'Caught exception: '. $e->getMessage() ."\n";
+            echo "Mensagem enviada com sucesso!<br>";
+          } catch (Exception $e) {
+            echo 'Caught exception: ' . $e->getMessage() . "\n";
+            echo "Mensagem não enviada!<br>";
+          }
+           echo "Erro Mensagem não enviada!";
+          
         }
+        ?>
 
 
-?>
 
     
 </body>
