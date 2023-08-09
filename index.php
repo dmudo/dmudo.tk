@@ -24,31 +24,22 @@
     <header class="mb-auto">
 
       <div class="nav1">
-        <nav class="nav nav-masthead justify-content-center float-md-end">
+        <div class="container">
+          <div class="foto"><img src="img/fotorosto4.svg" alt="Dangelo" width="220" height="220" /></div>
+        </div>
+        <nav class="nav nav-masthead justify-content-center">
           <a class="nav-link" aria-current="page" href="blog.html">Artigos</a>
           <a class="nav-link" href="#">Galeria de fotos</a>
-          <h2 class="float-md-start mb-0"><img src="img/rosto.svg" alt="Dangelo" width="125" height="125" /></h2>
-        </nav>
-      </div>
-
-      <div class="nav2">
-        <nav class="nav nav-masthead justify-content-center float-md-end">
-          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#msgsms">Enviar uma mensagem no meu celular</a>
+          <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#msgsms">Msg rápida</a>
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reuniao">Agendar Reunião</a>
-          <h3 class="float-md-start mb-0"><img src="img/rosto2.svg" alt="Dangelo" width="135" height="135" /></h3>
         </nav>
       </div>
-
     </header>
     <br>
     <br>
     <div class="nav3">
       <iframe width="600" height="600" src="https://player.vimeo.com/video/827090230?background=1" frameborder="0" allowfullscreen></iframe>
     </div>
-  </div>
-
-  <div class="nav4">
-
   </div>
 
 </body>
