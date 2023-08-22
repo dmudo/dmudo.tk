@@ -28,7 +28,7 @@
           <div class="foto"><img src="img/fotorosto4.svg" alt="Dangelo" width="220" height="220" /></div>
         </div>
         <nav class="nav nav-masthead justify-content-center">
-          <a class="nav-link" aria-current="page" href="blog.html">Artigos</a>
+          <a class="nav-link" aria-current="page" href="#">Artigos</a>
           <a class="nav-link" href="#">Galeria de fotos</a>
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#msgsms">Msg rápida</a>
           <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#reuniao">Agendar Reunião</a>
