@@ -10,7 +10,7 @@
   color: rgb(253, 253, 253);
   background-color: transparent;
   border-bottom: .25rem solid transparent;
-  padding-top: 30%;
+  padding-top: 45%;
 
 }
 
@@ -54,7 +54,6 @@
 }
 
 .nav4 {
-
   position: relative;
 	padding-bottom: 56.25%; /* 16:9 */
 	padding-top: 35px;
@@ -72,7 +71,6 @@
 .container {
   position: relative;
   
-
 }
 
 .foto {
